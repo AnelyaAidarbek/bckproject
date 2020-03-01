@@ -1,0 +1,22 @@
+{% extends 'excapp/base.html' %}
+
+{% block content %}
+<a href="{{file.url}}">Download</a>
+<table border="1">
+    <tr>
+        {%for head in headers%}
+        <th>{{head}}</th>
+        {%endfor%}
+    </tr>
+    {% for row in excell %}
+    <tr>
+    {% for cell in row %}
+    <td>
+        {{ cell }}
+    </td>
+    {% endfor %}
+</tr>
+{% endfor %}
+</table>
+       
+{% endblock %}
